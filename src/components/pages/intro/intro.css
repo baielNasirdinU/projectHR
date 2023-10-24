@@ -1,0 +1,25 @@
+.intro .title{
+    /* font-family: Inter; */
+    /* font-family: Inter; */
+    text-transform: uppercase;
+font-size: 60px;
+font-weight: 700;
+line-height: 90px;
+letter-spacing: 0em;
+text-align: left;
+
+    
+}
+.main-bg{
+    background: linear-gradient(rgb(179, 193, 188) ,white);
+}
+.p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    width: 150px;
+    
+ 
+ 
+}
