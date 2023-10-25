@@ -1,0 +1,30 @@
+.cotegory .title{
+    /* font-family: Inter; */
+font-size: 36px;
+font-weight: 600;
+line-height: 44px;
+letter-spacing: 0em;
+text-align: left;
+
+
+}
+.cotegoryTitle{
+    font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+margin-bottom: 8px;
+
+}
+.cotegryPh{
+    font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 19px;
+color: #5C5B5B;
+letter-spacing: 0em;
+text-align: left;
+
+}

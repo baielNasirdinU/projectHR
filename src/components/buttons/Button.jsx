@@ -1,11 +1,10 @@
-const Button = () => {
+const Button = (props) => {
   return (
     <div>
-        <button 
+        <button  className="relative"
          >
-          <a href="/" className="rounded-[30px] pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">
-            войти
-          </a>
+      
+            {props.children}
         </button>
     </div>
   )

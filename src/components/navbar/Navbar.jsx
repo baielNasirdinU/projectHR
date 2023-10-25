@@ -29,7 +29,9 @@ const Navbar = () => {
           <div className={`${style.container}  flex justify-between h-[100px] items-center`}>
       <div className=" flex gap-[60px] items-center">
       <div className="logo">
-            <img src={logo} alt="" />
+         <a href="/">
+         <img src={logo} alt="logo" />
+         </a>
         </div>
         <ul className="flex gap-[10px]">
             {items.map(item=>{
@@ -47,8 +49,10 @@ const Navbar = () => {
         </ul>
       </div>
         <div className={`flex gap-[20px]`}>
-<Button></Button>
-<Button className={`bg-cyan-400  `}>ii</Button>
+<Button>    <a href="/" className="rounded-[30px] pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">Войти
+          </a></Button>
+<Button className={`bg-cyan-400  `}>    <a href="/" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">Регистрация
+          </a></Button>
         </div>
     </div>
     </div>
