@@ -8,6 +8,8 @@ import Navbar from './components/navbar/Navbar'
 import Cotegory from './components/pages/cotegory/Cotegory'
 import Vacancy from './components/pages/vacancy/Vacancy'
 import Employer from './components/pages/employer/Employer'
+import Footer from './components/footer/Footer'
+
 function App() {
   // const [showInfo]=useState(false)
   const data =[
@@ -51,6 +53,7 @@ function App() {
           <Vacancy data={data} />
           <Cotegory />
           <Employer />
+          <Footer />
           </>
         }
         />
