@@ -3,7 +3,23 @@
 font-size: 18px;
 font-weight: 600;
 line-height: 24px;
+margin-bottom: 22px;
 letter-spacing: 0em;
 text-align: left;
 
+}
+.footer .contact a{
+    font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+margin-bottom: 12px;
+color:#5C5B5B;
+}
+.footer .contact .buttonForm{
+    color: white;
+    display: flex;
+        
 }

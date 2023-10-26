@@ -8,10 +8,9 @@ import john from '../../img/john.png'
 const Employer = () => {
   return (
     <div>
-        <div className={`${styles.container}  flex gap-[16px] mt-[120px] mb-[120px]`}>
+        <div className={`${styles.container}  flex gap-[16px] mt-[120px] mb-[120px] flex-wrap lg:flex-nowrap justify-center lg:justify-start `}>
             
-            <div className="w-[670px] rounded-[20px] relative overflow-hidden z-0 bg-[#3642AD] h-[320px] flex items-center pl-[66px]">
-                {/* <img src="/" alt="" /> */}
+            <div className="sm:w-[670px]  w-full rounded-[20px] relative overflow-hidden z-0 bg-[#3642AD] h-[320px] flex items-center pl-[66px] ">
                 <div className="employ">
                     <h3>Работодатель</h3>
                     <p className='employInfo'>Ищете в свою команду новых людей?</p>
@@ -19,11 +18,11 @@ const Employer = () => {
                   <a href="/" className="rounded-[30px]  href pl-[40px] pr-[40px] pt-[15px] pb-[15px] ">Зарегистрироваться
           </a>
                   </Button>
-          <div className="w-[450px] h-[300px] bg-[#2EB9FF] z-[-30]  absolute right-[-150px] top-[-100px]  rounded-br-[50%] rotate-45 "></div>
+          <div className="w-[450px]  h-[300px] bg-[#2EB9FF] z-[-30]  absolute right-[-150px] top-[-100px]  rounded-br-[50%] rotate-45 "></div>
           <img src={mask} alt="mask" className='absolute z-[-20] top-0 right-[-20px]  ' />
                 </div>
             </div>
-            <div className="w-[670px] rounded-[20px] relative overflow-hidden bg-[#3642AD] h-[320px] flex items-center pl-[66px]">
+            <div className="sm:w-[670px] w-full rounded-[20px] relative overflow-hidden bg-[#3642AD] h-[320px] flex items-center pl-[66px]">
                 {/* <img src="/" alt="" /> */}
                 <div className="employ">
                     <h3>Соискатель</h3>

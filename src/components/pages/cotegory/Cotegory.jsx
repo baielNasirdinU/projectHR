@@ -32,13 +32,14 @@ const Cotegory = () => {
   return (
     <div className='cotegory bg-[#F4F6FF] pb-[100px] pt-[69px]'>
         <div className={`${styles.container}   `}>
-           <div className="w-[1180px] m-auto">
+           <div className=" m-auto">
            <h3 className='title  mb-[70px]'>Популярные категории</h3>
-            <div className="wrapper flex flex-wrap gap-[41px]">
+            <div className="wrapper flex flex-wrap gap-[41px] justify-center lg:justify-start ">
                 {
                     contents.map((content)=>{
                         return(
-                            <div  key={content.id} className={`w-[360px] h-[130px] overflow-hidden border rounded-[20px]  bg-[#F8F8FA] flex flex-col justify-center items-center relative `}>
+                            <div  key={content.id} className={`w-full  wb:w-[366px] 
+                            h-[150px] sm:h-[180px] wb:h-[130px] overflow-hidden border rounded-[20px]  bg-[#F8F8FA] flex flex-col justify-center items-center relative `}>
                                 <img src={content.link} alt="image" className='absolute left-[-15px] rounded-[50%] w-[80px] h-[80px] top-[-15px] overflow-y-hidden' />
                               <div className="">
                               <h3 className='cotegoryTitle'>{content.name}</h3>
