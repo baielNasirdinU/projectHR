@@ -1,0 +1,22 @@
+.creatAcaunt h2{
+    /* font-family: Inter; */
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 44px;
+    
+}
+.creatAcaunt .info{
+    /* font-family: Inter; */
+    font-size: 14px;
+    color:#000000;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    margin-bottom: 22px;
+    text-align: left;
+    
+    
+}

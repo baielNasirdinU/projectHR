@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from '../styles/style'
 import logo from '../img/logo.png'
-import Button from '../buttons/Button'
+// import Button from '../buttons/Button'
 import './footer.css'
 import {FaInstagram,FaFacebook,FaYoutube,FaTwitter}from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div className='  bg-[#F4F6FF] h-[412px]'>
+    <div className='  bg-[#F4F6FF] '>
         <div className={`${styles.container}  pt-[60px] `}>
-            <div className="flex justify-between footer">
+            <div className="flex sm:justify-between justify-around sm:gap-0 gap-4  footer flex-wrap">
                 <div className="logo">
                     <a href="/">
                         <img src={logo} alt="logo" />
@@ -58,7 +58,7 @@ const Footer = () => {
                 <div className="contact flex flex-col">
                     <h4>Оставить заявку</h4>
                  
-                       <form className=' flex flex-col gap-[10px] w-[400px]  '>
+                       <form className=' flex flex-col gap-[10px] w-[90%] xs:w-[400px]  '>
   <label> 
     <input type="text" name="" className='h-[55px] w-full  pl-[24px] outline-none rounded-[6px]' placeholder='Ваше имя'/>
   </label>
@@ -69,15 +69,15 @@ const Footer = () => {
     <textarea placeholder='Сообщение' name=""  className='h-[55px] w-full  pl-[24px] outline-none rounded-[6px]' />
   </label>
 <div className="flex items-end flex-col">
-<Button >
-  <a href="/" className="rounded-[30px] bg-[#4A6DFF] buttonForm pl-[30px] pr-[30px] pt-[15px] pb-[15px] border"> Отправить
+<button type='submit'>
+  <a href="/" className="rounded-[30px] bg-[#4A6DFF]  buttonForm pl-[30px] pr-[30px] pt-[15px] pb-[15px] border"> Отправить
           </a>
-  </Button>
+  </button>
 </div>
 </form>
                 </div>
             </div >
-                <div className="  flex justify-between  relative">
+                <div className=" hidden lg:flex justify-between  relative">
                     <a href="/" target='_blank' className='absolute top-[-40px] left-[10%] text-[16px] text-[#A6A6A6]'>© 2023. DevsFactory. All Right Reserved.</a>
                     <div className="flex absolute right-[35%] top-[-40px] gap-[24px]">
                         <a href="https://www.instagram.com/" target='_blank'>

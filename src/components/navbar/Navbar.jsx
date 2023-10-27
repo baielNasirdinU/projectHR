@@ -8,7 +8,16 @@ import {BiXCircle}from 'react-icons/bi'
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({showMenu,setShowMenu}) => {
-    const items=[
+  window.addEventListener('keydown',(e)=>{
+    // console.log(e);
+    if (e.key=="Escape") {
+      setShowMenu(false)
+      
+    }
+
+
+  })
+  const items=[
         {
           name:"Вакансии",
           id:uuidv4(),
@@ -28,21 +37,21 @@ const Navbar = ({showMenu,setShowMenu}) => {
       // console.log(showMenu,setShowMenu);
     
   return (
-    <div className="header sticky top-0 z-20 ">
+    <div className="header sticky top-0 z-20  border-b-1   border-indigo-600 shadow-lg">
           <div className={`${style.container}  flex justify-between h-[100px] items-center`}>
       <div className=" flex gap-[60px] items-center">
       <div className="logo">
-         <a href="/">
+         <NavLink to="/">
          <img src={logo} alt="logo" />
-         </a>
+         </NavLink>
         </div>
         <ul className="hidden md:flex gap-[10px]">
             {items.map(item=>{
                 return(
                     <li key={item.id}  className="">
-                        <a href={item.href} className="mr-[69px] list ">
+                        <NavLink to={item.href} className="mr-[69px] list  ">
                             {item.name}
-                        </a>
+                        </NavLink>
                     </li>
                 )
             }
@@ -69,10 +78,10 @@ const Navbar = ({showMenu,setShowMenu}) => {
             )}
             <li className="mt-8">
             <div className={`flex justify-center ss:hidden ss:gap-[20px] gap-[40px] flex-wrap `}>
-<Button>    <a href="/" className="rounded-[30px] pl-[20px] pr-[20px] pt-[10px] pb-[10px] border">Войти
-          </a></Button>
-<Button className={`bg-cyan-400  `}>    <a href="/" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[10px] pb-[10px] border">Регистрация
-          </a></Button>
+<Button>    <NavLink to="/signIn" className="rounded-[30px] pl-[20px] pr-[20px] pt-[10px] pb-[10px] border">Войти
+          </NavLink></Button>
+<Button className={`bg-cyan-400  `}>    <NavLink to="/signUp" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[10px] pb-[10px] border">Регистрация
+          </NavLink></Button>
         </div>
             </li>
             
@@ -81,7 +90,7 @@ const Navbar = ({showMenu,setShowMenu}) => {
       :
                <ul className="absolute md:hidden 
                bg-black w-[50%] h-screen   
-               top-[-1000%] right-0 active ">
+               top-[-1000px] right-0 active ">
                   {items.map(item=>{
                       return(
                           <li key={item.id}  
@@ -99,10 +108,10 @@ const Navbar = ({showMenu,setShowMenu}) => {
         }
       </div>
         <div className={`hidden ss:flex gap-[20px]`}>
-<Button>    <a href="/" className="rounded-[30px] pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">Войти
-          </a></Button>
-<Button className={`bg-cyan-400  `}>    <a href="/" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">Регистрация
-          </a></Button>
+<Button>    <NavLink to="/signIn" className="rounded-[30px] pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">Войти
+          </NavLink></Button>
+<Button className={`bg-cyan-400  `}>    <NavLink to="/signUp" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[40px] pr-[40px] pt-[15px] pb-[15px] border">Регистрация
+          </NavLink></Button>
         </div>
         <div className="burger md:hidden">
           {
