@@ -13,6 +13,8 @@ import Employer from './components/pages/employer/Employer'
 import Footer from './components/footer/Footer'
 import CreateAcount from './components/pages/signUp/createAcaunt/CreateAcount'
 import GetCode from './components/pages/signUp/getCode/GetCode'
+import FogetCode from './components/pages/signIn/fogotCode/FogetCode'
+import CreateCode from './components/pages/signIn/createCode/CreateCode'
 
 function App() {
 const [showPassword,setShowPassword]=useState(false)
@@ -82,10 +84,12 @@ const [showMenu,setShowMenu]=useState(false)
         }
         />
         <Route  path='/вакансия' element={<Vacancy data={data}/>}/>
-        <Route  path='/signIn' element={<SignIn/>}/>
+        <Route  path='/signIn' element={<SignIn showPassword={showPassword} setShowPassword={setShowPassword}/>}/>
         <Route  path='/signUp' element={<SignUp/>}/>
         <Route  path='/createAcount' element={<CreateAcount showPassword={showPassword} setShowPassword={setShowPassword}/>}/>
         <Route  path='/getCode' element={<GetCode/>}/>
+        <Route  path='/fogetCode' element={<FogetCode/>}/>
+        <Route  path='/createCode' element={<CreateCode showPassword={showPassword} setShowPassword={setShowPassword}/>}/>
 
 
       </Routes>

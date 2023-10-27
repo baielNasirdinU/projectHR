@@ -78,9 +78,9 @@ const Navbar = ({showMenu,setShowMenu}) => {
             )}
             <li className="mt-8">
             <div className={`flex justify-center ss:hidden ss:gap-[20px] gap-[40px] flex-wrap `}>
-<Button>    <NavLink to="/signIn" className="rounded-[30px] pl-[20px] pr-[20px] pt-[10px] pb-[10px] border">Войти
+<Button>    <NavLink to="/signIn" className="rounded-[30px] pl-[20px] pr-[20px] pt-[10px] pb-[10px] border" onClick={()=>setShowMenu(false)}>Войти
           </NavLink></Button>
-<Button className={`bg-cyan-400  `}>    <NavLink to="/signUp" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[10px] pb-[10px] border">Регистрация
+<Button className={`bg-cyan-400  `}>    <NavLink to="/signUp" className="rounded-[30px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[10px] pb-[10px] border" onClick={()=>setShowMenu(false)}>Регистрация
           </NavLink></Button>
         </div>
             </li>

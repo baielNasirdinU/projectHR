@@ -23,7 +23,7 @@ const CreateAcount = ({showPassword,setShowPassword}) => {
           </NavLink>
                </Button> 
                </div>
-               <form action="" className='flex flex-col gap-[16px]  mb-[20px]'>
+               <form action="" className='flex flex-col gap-[16px]   mb-[20px]'>
                 <label ><input type="text" placeholder='Наименование компании' className='w-full outline-none  pl-[25px] p-4 rounded-[6px]  border' /></label>
                 <label ><input type="email" placeholder='Электронная почта' className='w-full outline-none  pl-[25px] p-4 rounded-[6px]  border' /></label>
         {
