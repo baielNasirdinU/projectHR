@@ -40,7 +40,7 @@ const CreateCode = ({showPassword,setShowPassword}) => {
       
       
   
-     <button type='submit' className='w-full '>  <NavLink to="/" className="rounded-[30px] mt-[40px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px] block h  text-[20px]  w-full border font-[2000]">Создать
+     <button type='submit' className='w-full '>  <NavLink to="/userPanel" className="rounded-[30px] mt-[40px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px] block h  text-[20px]  w-full border font-[2000]">Создать
           </NavLink></button>
                </form>
       
