@@ -10,12 +10,12 @@ import "./footer.css";
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 
 
-const schema = yup.object().shape({ 
-  yourName:yup.string().required('enter your name'),
-  yourNumber:yup.number().positive().integer().min(10).required('enter your number '),
-  yourMessage:yup.string().min(20).required('write message min 20 words')
-});
 const Footer = () => {
+  const schema = yup.object().shape({ 
+    yourName:yup.string().required('enter your name'),
+    yourNumber:yup.number().positive().integer().min(10).required('enter your number '),
+    yourMessage:yup.string().min(20).required('write message min 20 words')
+  });
   const { register, handleSubmit,formState:{errors} } = useForm({
     resolver:yupResolver(schema)
   });

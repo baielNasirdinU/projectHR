@@ -1,10 +1,38 @@
 import React from "react";
 import "./getCode.css";
-import { NavLink } from "react-router-dom";
-import Button from "../../../buttons/Button";
-import styles from "../../../styles/style";
+import { useNavigate} from "react-router-dom";
 
-const GetCode = () => {
+import styles from "../../../styles/style";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import {yupResolver}from '@hookform/resolvers/yup'
+
+
+
+const GetCode = () => { 
+  const schema = yup.object().shape({
+    numberOne:yup.number().positive().integer().min(1).max(1).required('enter your number '),
+    numberTwo:yup.number().required(),
+    numberThree:yup.number().required(),
+    numberFour:yup.number().required(),
+    numberFive:yup.number().required(),
+    numberSix:yup.number().required(),
+    
+   })
+
+  const { register, handleSubmit,formState:{errors} } = useForm({
+    resolver:yupResolver(schema)
+  });
+const navigate=useNavigate()
+
+  const onSubmit = (data) => {
+
+   
+    console.log(data);
+    navigate('/userPanel')
+  
+  };
+
   return (
     <div className="bg-[#EAEEFF] lg:h-screen">
       <div className={`${styles.container} flex  justify-center  pt-[94px]   `}>
@@ -12,59 +40,51 @@ const GetCode = () => {
           <h2>Код подтверждения </h2>
           <p className="info">Код отправлен на почту email.........</p>
 
-          <form action="" className="flex gap-[10px] mb-[40px]">
-            <label htmlFor="" className="">
+          <form action="" onSubmit={handleSubmit(onSubmit)} className=" ">
+            <label htmlFor="" className="flex gap-[10px]">
               <input
                 type="text"
                 placeholder="0"
-                className="w-[60px] h-[60px] text-center rounded-[6px]"
+                className="w-[60px] h-[60px] text-center rounded-[6px]" {...register("numberOne")}
               />
-            </label>
-            <label htmlFor="" className="">
+         
               <input
                 type="text"
                 placeholder="0"
-                className="w-[60px] h-[60px] text-center rounded-[6px]"
+                className="w-[60px] h-[60px] text-center rounded-[6px]" {...register("numberTwo")}
               />
-            </label>
-            <label htmlFor="" className="">
+          
               <input
                 type="text"
                 placeholder="0"
-                className="w-[60px] h-[60px] text-center rounded-[6px]"
+                className="w-[60px] h-[60px] text-center rounded-[6px]" {...register("numberThree")} 
               />
-            </label>
-            <label htmlFor="" className="">
+      
               <input
                 type="text"
                 placeholder="0"
-                className="w-[60px] h-[60px] text-center rounded-[6px]"
+                className="w-[60px] h-[60px] text-center rounded-[6px]" {...register("numberFour")} 
               />
-            </label>
-            <label htmlFor="" className="">
+     
               <input
                 type="text"
                 placeholder="0"
-                className="w-[60px] h-[60px] text-center rounded-[6px]"
+                className="w-[60px] h-[60px] text-center rounded-[6px]" {...register("numberFive")} 
               />
-            </label>
-            <label htmlFor="" className="">
+      
               <input
                 type="text"
                 placeholder="0"
-                className="w-[60px] h-[60px] text-center rounded-[6px]"
+                className="w-[60px] h-[60px] text-center rounded-[6px]" {...register("numberSix")}  
               />
             </label>
-          </form>
-          <button type="submit" className="w-full ">
-            {" "}
-            <NavLink
-              to="/userPanel"
-              className="rounded-[30px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px] block h  text-[20px]  w-full border font-[2000]"
-            >
+          <button type="submit" className="rounded-[30px] mt-[40px]
+          bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px] block h  text-[20px]  w-full border font-[2000]">
+        
               Создать аккаунт
-            </NavLink>
+        
           </button>
+            </form>
         </div>
       </div>
     </div>

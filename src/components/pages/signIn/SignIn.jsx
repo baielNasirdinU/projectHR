@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "../../styles/style";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./signIn.css";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import {yupResolver}from '@hookform/resolvers/yup'
 
-// import Button from "../../buttons/Button";
-// import Button from '../../buttons/Button'
+
 const schema = yup.object().shape({
   email:yup.string().email().required(),
   password:yup.string().min(4).max(20).required()
@@ -21,12 +21,13 @@ const SignIn = ({ showPassword, setShowPassword }) => {
   const { register, handleSubmit,formState:{errors} } = useForm({
     resolver:yupResolver(schema)
   });
-
+const navigate=useNavigate()
 
   const onSubmit = (data) => {
 
    
     console.log(data);
+    navigate('/userPanel')
   
   };
 
@@ -37,7 +38,7 @@ const SignIn = ({ showPassword, setShowPassword }) => {
       >
         <div className=" signIn  ">
           <h2>Войти</h2>
-          <p className="info">
+          <p className="info mb-[60px]">
             С возвращением! Пожалуйста, введите свои данные
           </p>
 
@@ -112,14 +113,9 @@ const SignIn = ({ showPassword, setShowPassword }) => {
               </label>
             )}
 
-            <button type="submit" className="w-full ">
-              {" "}
-              {/* <NavLink
-                to="/userPanel"
-                className="rounded-[30px] mt-[60px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px] block h  text-[20px]  w-full border font-[2000]"
-              >
-                Войти
-              </NavLink> */}
+            <button type="submit"  className="rounded-[30px] mt-[60px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px] block h  text-[20px]  w-full border font-[2000]" >
+          
+        
                   Войти
             </button>
           </form>

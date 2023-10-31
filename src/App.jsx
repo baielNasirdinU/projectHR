@@ -15,10 +15,15 @@ import CreateAcount from "./components/pages/signUp/createAcaunt/CreateAcount";
 import GetCode from "./components/pages/signUp/getCode/GetCode";
 import FogetCode from "./components/pages/signIn/fogotCode/FogetCode";
 import CreateCode from "./components/pages/signIn/createCode/CreateCode";
+import CreateVacancy from "./components/pages/userPanel/createVacancy/CreateVacancy";
 
 function App() {
   const [showPassword, setShowPassword] = useState(false);
+  setTimeout(() => {
+    setShowPassword(false)
 
+    
+  }, 5000);
   const [showInfo] = useState(true);
   const data = [
     {
@@ -64,7 +69,9 @@ function App() {
     },
   ];
   const [showMenu, setShowMenu] = useState(false);
-
+  const [newUser,setNewUser]=useState({})
+// const [data,setData]=useState()
+// console.log(data);
   return (
     <>
       <BrowserRouter>
@@ -91,13 +98,15 @@ function App() {
               />
             }
           />
-          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signUp" element={<SignUp  setNewUser={setNewUser}/>} />
           <Route
             path="/createAcount"
             element={
               <CreateAcount
                 showPassword={showPassword}
                 setShowPassword={setShowPassword}
+                newUser={newUser}
+                setNewUser={setNewUser}
               />
             }
           />
@@ -113,6 +122,7 @@ function App() {
             }
           />
           <Route path="/userPanel" element={<UserPanel />} />
+          <Route path="/createVacancy" element={<CreateVacancy />} />
         </Routes>
         <Footer />
       </BrowserRouter>
