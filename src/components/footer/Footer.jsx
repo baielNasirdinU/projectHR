@@ -17,7 +17,7 @@ const Footer = () => {
     yourMessage:yup.string().min(20).required('write message min 20 words')
   });
   const { register, handleSubmit,formState:{errors} } = useForm({
-    resolver:yupResolver(schema)
+    resolver:yupResolver(schema)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
   });
   const onSubmit = (data) => {
 
@@ -50,7 +50,7 @@ const Footer = () => {
             <a href="/вакансия">Вакансии</a>
             <a href="/">Работодатели</a>
           </div>
-          <div className="contact flex flex-col">
+          <div className="contact flex flex-col">     
             <h4>Работодателям</h4>
             <a href="/">Личный кабинет</a>
             <a href="/вакансия">Опубликовать вакансии</a>

@@ -1,0 +1,23 @@
+.newVacancy h3{
+    /* font-family: Inter; */
+font-size: 18px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+margin-top: 40px;
+margin-bottom: 20px;
+text-align: left;
+
+}
+.newVacancy ul li{
+    list-style: inside;
+}
+.newVacancy h2{
+    font-family: "Gill Sans", sans-serif;;
+font-size: 18px;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+
+}
