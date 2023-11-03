@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/style";
 import logo from "../img/logo.png";
 // import Button from '../buttons/Button'
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import {yupResolver}from '@hookform/resolvers/yup'
@@ -16,13 +17,17 @@ const Footer = () => {
     yourNumber:yup.number().positive().integer().min(10).required('enter your number '),
     yourMessage:yup.string().min(20).required('write message min 20 words')
   });
-  const { register, handleSubmit,formState:{errors} } = useForm({
+  const { register, handleSubmit,formState:{errors},reset } = useForm({
     resolver:yupResolver(schema)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
   });
+  const navigate=useNavigate()
   const onSubmit = (data) => {
+
 
    
     console.log(data);
+    reset()
+    
   
   };
   return (
@@ -90,7 +95,7 @@ const Footer = () => {
               </label>
               <label className="relative">
               {/* <p className="errorText absolute top-[-24px]">{errors.yourNumber?.message}</p> */}
-                <input
+                <input id="input"
                   type="text"
                   placeholder="Ваш номер телефона"
                   className={`h-[55px] w-full  pl-[24px] outline-none rounded-[6px] ${errors.yourNumber?' outline-red-500':''}`}
@@ -99,7 +104,7 @@ const Footer = () => {
               </label>
               <label className="relative">
               <p className="errorText absolute top-[54px]">{errors.yourMessage?.message}</p>
-                <textarea
+                <textarea 
                   placeholder="Сообщение"
                   name=""
                   className="h-[55px] w-full  pl-[24px] outline-none rounded-[6px]"

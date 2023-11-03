@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import NewVacancy from "./newVacancy/NewVacancy";
 import Fortylines from '../../../img/FortylinesLogo.png'
+import { RiPencilLine}from 'react-icons/ri'
 
 
 const schema = yup.object().shape({
@@ -31,7 +32,7 @@ const schema = yup.object().shape({
 const CreateVacancy = () => {
   const [addVacancy,setAddVacancy]=useState(false)
   const [data,setData]=useState([])
-  
+  const [edit,setEdit]=useState(false)
 
   const {
     register,
@@ -48,6 +49,7 @@ const CreateVacancy = () => {
   const onSubmit = (data) => {
     setData({data,  date: date().toLocaleDateString() });
     // navigate("/userPanel");
+    // dataHandle(data)
     setAddVacancy(true)
   };
  const selectOne = ["Административный ассистент","Бухгалтер", "Веб-разработчик","Главный бухгалтер","Дизайнер","Инженер","Контент-менеджер"]
@@ -65,14 +67,17 @@ const CreateVacancy = () => {
     <div className="mb-[230px]">
       <div className={`${styles.container} newVacancy mt-[65px] `}>
        {
-        addVacancy?<NewVacancy data={data}/>: <div className="sm:w-[50%] lg:w-[650px] w-full ">
-        <h2 className="title">Добавление новой вакансии </h2>
+        addVacancy?<NewVacancy data={data}  setAddVacancy={setAddVacancy} setEdit={setEdit}/>: <div className="sm:w-[50%] lg:w-[650px] w-full ">
+        <h2 className="title relative" >Добавление новой вакансии  {edit?<RiPencilLine className="absolute right-0 top-0 text-[34px]"/>:''}
+        </h2>
+
+
         <div className="fortynlines flex items-center gap-[20px]">
           <img src={Fortylines} alt="Fortylines" className="w-[70px] h-[70px] rounded-[50%]" />
           <a href="#">Fortylines IO</a>
         </div>
-        <div className="aboutCompany mb-[40px] mt-[60px]">
-          <h3 className="text-[22px] font-bold">О компании</h3>
+        <div className="aboutCompany mt-[60px]">
+          <h3>О компании</h3>
           <p className="border p-4">
             Fortylines IO - это молодая, современная команда профессионалов с
             опытом создания успешных ИТ-решений. Мы компания по разработке
@@ -122,7 +127,7 @@ const CreateVacancy = () => {
 
             <select placeholder="jjdf"
               {...register("selectIndustry")} 
-              className="p-3 border  w-full  mb-[40px]"
+              className="p-3 border  w-full  "
             >
               <option value=""  hidden>  -Выберите-</option>
               {
@@ -138,7 +143,7 @@ const CreateVacancy = () => {
             </select>
           </label>
           <label >
-            <h3 className="mb-[40px] "> Описание к вакансии</h3>
+            <h3 > Описание к вакансии</h3>
 
             <textarea
               {...register("vacancy")}
@@ -149,7 +154,7 @@ const CreateVacancy = () => {
             ></textarea>
           </label>
           <label >
-            <h3 className="mt-[40px]"> Требуемые навыки</h3>
+            <h3 > Требуемые навыки</h3>
 
             <textarea
               {...register("skills")}
@@ -163,7 +168,7 @@ const CreateVacancy = () => {
           </label>
 
            <label>
-            <h3 className="mt-[40px]">Оклад</h3>
+            <h3 >Оклад</h3>
             <label className="flex  gap-[14px]">
               <select 
                 {...register("selectSalary")}   
@@ -193,7 +198,7 @@ const CreateVacancy = () => {
             </label>
           </label> 
           <label >
-            <h3 className="mt-[40px]  "> Вид занятости</h3>
+            <h3 > Вид занятости</h3>
 
             <select 
               {...register("selectEmploymenet")}
@@ -209,7 +214,7 @@ const CreateVacancy = () => {
              }
             </select>
           </label>
-          <h3 className="mt-[40px]">Опыт работы/стаж</h3>
+          <h3>Опыт работы/стаж</h3>
          {
           errors.selectOption?.message? <label >
           <input    type="radio"  defaultChecked  />
@@ -235,7 +240,7 @@ inputRadio.map((item=>
       
           
           <label>
-            <h3  className="mt-[40px]">Контактная информация</h3>
+            <h3  >Контактная информация</h3>
             <select 
               {...register("country")}
               className="p-3 border  w-full mb-[20px]"
@@ -253,16 +258,18 @@ inputRadio.map((item=>
           </label>
           <label>    <input {...register("city")}
               type="text"
+              placeholder="city"
              
               className="w-full outline-none h-[60px] p-4 border mb-[20px]"
             />
             <input {...register("address")}
               type="text"
+              placeholder="address"
            
               className="w-full outline-none pl-4 h-[60px] border mb-[40px]"
             /></label>
           <label > 
-            <h3 className="mt-[40px]  "> Дополнительная информация </h3>
+            <h3 > Дополнительная информация </h3>
             <textarea {...register("moreInformation")}
               className="w-full h-[130px] border p-2 outline-none"
               placeholder="Например: 
@@ -279,7 +286,7 @@ inputRadio.map((item=>
             className="rounded-[30px] mt-[60px] bg-[#4A6DFF] text-white pl-[20px] pr-[20px] pt-[15px] pb-[15px]   text-[20px]  
              border font-[2000]"
           >
-            Разместить вакансию
+                  {edit?'Сохранить ':'    Разместить вакансию'}
           </button>
           <button  >
           <a href="/userPanel" className="rounded-[30px] mt-[60px]  pl-[20px] pr-[20px] pt-[13px] pb-[13px] block text-[#AEB0B2] text-[20px]  w-full border-4  font-[2000]">

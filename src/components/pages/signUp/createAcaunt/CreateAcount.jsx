@@ -34,8 +34,8 @@ const schema = yup.object().shape({
             
         };
   return (
-    <div className='bg-[#EAEEFF]  pb-[20px] lg:h-screen'>
-    <div className={`${styles.container} flex  justify-center  pt-[54px]   border `}>
+    <div className='bg-[#EAEEFF]  pb-[40px] lg:h-[100vh'>
+    <div className={`${styles.container} flex  justify-center  pt-[54px]   bo `}>
        <div className="creatAcaunt border  ">
            <h2>Создайте аккаунт</h2>
            <p className='info'>Выберите роль:</p>

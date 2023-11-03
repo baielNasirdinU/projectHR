@@ -1,15 +1,7 @@
 import "./App.css";
 import { useState } from "react";
-import SignIn from "./components/pages/signIn/SignIn";
-import SignUp from "./components/pages/signUp/SignUp";
-import UserPanel from "./components/pages/userPanel/UserPanel";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Intro from "./components/pages/intro/Intro";
 import Navbar from "./components/navbar/Navbar";
-import Cotegory from "./components/pages/cotegory/Cotegory";
-import Vacancy from "./components/pages/vacancy/Vacancy";
-import Employer from "./components/pages/employer/Employer";
 import Footer from "./components/footer/Footer";
 import CreateAcount from "./components/pages/signUp/createAcaunt/CreateAcount";
 import GetCode from "./components/pages/signUp/getCode/GetCode";
@@ -17,8 +9,14 @@ import FogetCode from "./components/pages/signIn/fogotCode/FogetCode";
 import CreateCode from "./components/pages/signIn/createCode/CreateCode";
 import CreateVacancy from "./components/pages/userPanel/createVacancy/CreateVacancy";
 
+import {Cotegory,Employer,Intro,SignIn,SignUp,UserPanel,Vacancy}from './components/pages'
+
+// import NewVacancy from "./components/pages/userPanel/createVacancy/newVacancy/NewVacancy";
+
 function App() {
   const [showPassword, setShowPassword] = useState(false);
+
+ 
   setTimeout(() => {
     setShowPassword(false)
 
@@ -122,8 +120,10 @@ function App() {
             }
           />
           <Route path="/userPanel" element={<UserPanel />} />
-          <Route path="/createVacancy" element={<CreateVacancy />} />
+          <Route path="/createVacancy" element={<CreateVacancy  />} />
+
         </Routes>
+
         <Footer />
       </BrowserRouter>
     </>
